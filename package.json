@@ -1,6 +1,6 @@
 {
   "name": "styleclasses",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Simple styles helper useful for css-modules",
   "main": "index.js",
   "scripts": {
