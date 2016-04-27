@@ -20,5 +20,14 @@
     "lodash.get": "^4.2.1",
     "lodash.isempty": "^4.2.1",
     "lodash.kebabcase": "^4.0.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eisisig/styleclasses.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eisisig/styleclasses/issues"
+  },
+  "homepage": "https://github.com/eisisig/styleclasses#readme"
 }
