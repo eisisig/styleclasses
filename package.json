@@ -1,0 +1,16 @@
+{
+  "name": "styleclasses",
+  "version": "1.0.0",
+  "description": "Simple styles helper useful for css-modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["styles", "css", "modules", "helper", "sx", "styleclasses"],
+  "author": "Eisi Sig",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.isempty": "^4.2.1",
+    "lodash.kebabcase": "^4.0.1"
+  }
+}
