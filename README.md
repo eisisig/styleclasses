@@ -12,9 +12,9 @@ const sx = styleclasses(styles)
 
 ## Usage
 
-### sx(<name:string> [, <params:object>])
+### sx(\<name:string|array> [, \<params:object> [, \<extra:array|string>]])
 
-#### `string`: name of a property in the css file
+#### `name`: name of a property in the css file
 
 ```css
 .link {
@@ -26,6 +26,8 @@ const sx = styleclasses(styles)
 <a className={ sx('link') }>Link</a>
 // Ex. "App__link___1GOMC"
 ```
+
+IF name is an array it will loop through the keys and add the classnames
 
 #### `params`: object that toggles classes if truthy
 
@@ -44,6 +46,8 @@ const sx = styleclasses(styles)
 // Ex. "App__link___1GOMC App__link--is-active___E-W1K"
 ```
 
-**NOTE:** options property names are kebabCased. `isActive > is-active`, `hasManyItems > has-many-items` etc...
+#### `extra`: string or an array of extra class names that will be added to the classname
+
+> **NOTE:** options property names are kebabCased. `isActive > is-active`, `hasManyItems > has-many-items` etc...
 
 MIT
