@@ -27,6 +27,29 @@ const sx = styleclasses(styles)
 // Ex. "App__link___1GOMC"
 ```
 
+### single class name return
+
+If you want to follow the best practice to only use one classname for each element and then compose that in the css you can provide an condition array/object and it will return the first truth classname
+
+```js
+sx([
+	{ busy: this.props.busy },
+	{ button: true },
+])
+```
+
+Will return `styles['button']` when `this.props.busy` is false. But will return `styles['busy']` if true. You could then compose in css
+
+```css
+.button {
+	color: gray;
+}
+.busy {
+	compose: button;
+	color: blue;
+}
+```
+
 IF name is an array it will loop through the keys and add the classnames
 
 #### `params`: object that toggles classes if truthy
