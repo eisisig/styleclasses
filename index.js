@@ -27,10 +27,9 @@ function styleclasses ( styles ) {
 					if ( params.hasOwnProperty(k) ) {
 						var v = params[k]
 						if ( v === true ) {
-							var modKey = `${key}--${kebabCase(k)}`
-
-							c += ` ${get(s, k) || ''}`
-							c += ` ${get(s, modKey) || ''}`
+							var modKey = key + '--' + kebabCase(k)
+							c += ' ' + get(s, k) || ''
+							c += ' ' + get(s, modKey) || ''
 						}
 					}
 				}
@@ -42,7 +41,7 @@ function styleclasses ( styles ) {
 			key.forEach(( k ) => {
 
 				if ( typeof k === 'string' ) {
-					c += ` ${get(s, k) || ''}`
+					c += ' ' + get(s, k) || ''
 				}
 				// values are arrays or objects
 				else {
@@ -62,9 +61,9 @@ function styleclasses ( styles ) {
 
 		// Extra
 		if ( !isEmpty(extra) && isArray(extra) ) {
-			extra.forEach(( k ) => c += ` ${get(s, k) || ''}`)
+			extra.forEach(( k ) => c += ' ' + get(s, k) || '')
 		} else if ( typeof extra === 'string' ) {
-			c += ` ${extra}`
+			c += ' ' + extra
 		}
 
 		return c.trim()
