@@ -17,13 +17,13 @@ function styleclasses ( styles ) {
 
 	return ( key, params, extra ) => {
 
-		let c = ''
+		var c = ''
 
 		// string with an object
 		if ( typeof key === 'string' ) {
 			c += get(s, key) || ''
 			if ( !isEmpty(params) ) {
-				for ( let k in params ) {
+				for ( var k in params ) {
 					if ( params.hasOwnProperty(k) ) {
 						var v = params[k]
 						if ( v === true ) {
