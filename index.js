@@ -15,7 +15,7 @@ function styleclasses ( styles ) {
 
 	var s = styles
 
-	return ( key, params, extra ) => {
+	return function( key, params, extra ) {
 
 		var c = ''
 
@@ -38,14 +38,16 @@ function styleclasses ( styles ) {
 
 		// if key is array
 		else if ( isArray(key) ) {
-			key.forEach(( k ) => {
+			key.forEach(function( k ) {
 
 				if ( typeof k === 'string' ) {
 					c += ' ' + get(s, k) || ''
 				}
 				// values are arrays or objects
 				else {
-					var match = find(key, ( value ) => every(value))
+					var match = find(key, function( value ) {
+						return every(value);
+					})
 
 					if ( match ) {
 						var key = isObject(match) && isArray(match) ? match[0] : keys(match)[0]
@@ -61,7 +63,7 @@ function styleclasses ( styles ) {
 
 		// Extra
 		if ( !isEmpty(extra) && isArray(extra) ) {
-			extra.forEach(( k ) => c += ' ' + get(s, k) || '')
+			extra.forEach(function( k ) {  c += ' ' + get(s, k) || ''; });
 		} else if ( typeof extra === 'string' ) {
 			c += ' ' + extra
 		}
